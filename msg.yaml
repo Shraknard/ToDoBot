@@ -1,0 +1,48 @@
+# HELP
+desc_add: "Créer une nouvelle tâche."
+desc_tasks: "Lister toutes les tâches t'appartenant."
+desc_close: "Terminer une tâche."
+desc_unassigned: "Lister toutes les tâches non assignées."
+desc_info: "Informations détaillées d'une tâche."
+desc_unassign: "Se désassigner une tâche."
+desc_assign: "S'assigner une tâche."
+
+# USAGES
+usage_add: "**add**\n`$add <temps estimé en minute> <description>` \n*Ex:* `$add 20 Créer 10 nouveaux items`\n"
+usage_tasks: "**tasks**\n`$tasks OU $tasks <user_id>` \n*Ex:* `$tasks 496061891353903122`\n"
+usage_close: "**close**\n`$close <ID de la tâche> <Temps passé en minutes>` \n*Ex:* `$close ABCD 30`\n"
+usage_unassigned: "**unassigned**\n`$unassigned`\n"
+usage_info: "**info**\n`$info <ID tâche>` \n*Ex:* `$info ABCD`\n"
+
+# SUCCESS
+success_add: "La tâche `[{}] {}` a été correctement créée !\nTu as 5min pour cliquer sur les émoticones en dessous et ajouter un tag à ta tâche.\n*(Attend que les icones soient toutes apparues avant de cliquer)*\n\n"
+success_tasks: ""
+success_close: "La tâche `[{}]` **{}** a été terminée avec succès après environ **{}** minutes !"
+success_info: ""
+success_unassign: "La tâche `[{}] {}` ne t'es plus attribuée."
+success_assign: "La tâche `[{}] {}` t'a été attribuée."
+
+# FAILED
+fail_add: "Erreur lors de l'ajout de la tâche."
+fail_tasks1: "L'identifiant doit être un nombre. Exemple : 496061891353903122.\nVoir les identifiants sur discord : https://bit.ly/3v31Oyr"
+fail_close1: ""
+
+# OTHER
+task_exemple: "[**ID**] **-** Description\n**---------------------**\n"
+task_template: "[**{}**] **-** {}\n"
+
+# TAGS
+tags:
+  - Multi: 🫂
+  - Game: 🎮
+  - Lore: 📖
+  - Dev: 🖥️
+  - Art: 🎨
+  - Son: 🎵
+  - Com: 📢
+  - Orga: 📎
+  - Token: 🪙
+  - Autre: 🏷️
+
+
+
