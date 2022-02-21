@@ -8,6 +8,5 @@ color: 0x408080
 default_task:
     - users: 0
     - description: "This is the default task."
-    - estimated_time: 120
     - real_time: 200
     - tags: []
