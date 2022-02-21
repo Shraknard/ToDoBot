@@ -8,8 +8,6 @@ from pprint import pprint
 with open("config.yaml", "r") as file:
 	config = yaml.safe_load(file)
 
-with open("msg.yaml", "r") as file:
-	msg = yaml.safe_load(file)
 
 db_path = 'task.yaml'
 closed_path = 'closed.yaml'
@@ -61,11 +59,10 @@ def new_id():
 		n += 1
 
 
-def add(user_id: int, minutes: int, description: str):
+def add(user_id: int, description: str):
 	"""
 	Add a new task to the DB
 	:param user_id: ID of the user creating the task
-	:param minutes: expected time to finish the task in minutes
 	:param description: task content
 	:return: ID of the new task or -1
 	"""
@@ -75,7 +72,6 @@ def add(user_id: int, minutes: int, description: str):
 	new = {task_id: {
 		'users': [user_id],
 		'description': description,
-		'estimated_time': minutes,
 		'real_time': 0,
 		'tags': []}}
 	db.update(new)

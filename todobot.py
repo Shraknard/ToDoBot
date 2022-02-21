@@ -55,7 +55,7 @@ async def help(ctx, cmd=""):
 		return
 
 	try:
-		desc = msg["usage_" + cmd]
+		desc = msg["desc_" + cmd] + "\n\n" + msg["usage_" + cmd]
 		embed = discord.Embed(title="HELP pour la commande " + cmd, description=desc, color=config['color'])
 		await ctx.send(embed=embed)
 		return
@@ -82,7 +82,7 @@ async def add(ctx, *args):
 
 
 	# Add the task to the DB
-	task_id = todo.add(ctx.author.id, minutes, description)
+	task_id = todo.add(ctx.author.id, description)
 	if task_id == -1:
 		await ctx.send(msg['fail_add'])
 		return
@@ -164,7 +164,7 @@ async def tasks(ctx, *args):
 	return
 
 
-@bot.command(name='unassigned')
+@bot.command(name='todo')
 async def unassigned(ctx):
 	tasks = todo.get_unassigned()
 	if len(tasks):
@@ -172,7 +172,7 @@ async def unassigned(ctx):
 		embed = discord.Embed(title="Liste des tâches non assignées", description=desc, color=config['color'])
 		await ctx.send(embed=embed)
 	else:
-		await ctx.send("Aucune tâche non assignée.")
+		await ctx.send("Toutes les tâches sont prises !")
 	return
 
 
@@ -198,14 +198,14 @@ async def assign(ctx, task_id):
 		await ctx.send(embed=embed)
 
 
-
 @bot.command(name='info')
 async def info(ctx, task_id):
-	task = todo.get_task(task_id)
+	ta = todo.get_task(task_id)
 	desc = ""
-	for t in task:
-		desc += "**" + t "**\n**Description**"
-	embed = discord.Embed(title="Info task " + task_id, description=task, color=config['color'])
+	for t in ta:
+		desc += "**Description**: *"+ta[t]['description']+"*\n**Utilisateurs**: *"
+		desc += " ".join(map(str, ta[t]['users']))+"*\n**Tags**: *"+" ".join(map(str, ta[t]['tags']))+"*\n"
+	embed = discord.Embed(title="Info task " + task_id, description=desc, color=config['color'])
 	await ctx.send(embed=embed)
 	return
 

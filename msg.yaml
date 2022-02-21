@@ -2,17 +2,19 @@
 desc_add: "Créer une nouvelle tâche."
 desc_tasks: "Lister toutes les tâches t'appartenant."
 desc_close: "Terminer une tâche."
-desc_unassigned: "Lister toutes les tâches non assignées."
+desc_todo: "Lister toutes les tâches non assignées."
 desc_info: "Informations détaillées d'une tâche."
 desc_unassign: "Se désassigner une tâche."
 desc_assign: "S'assigner une tâche."
 
 # USAGES
-usage_add: "**add**\n`$add <temps estimé en minute> <description>` \n*Ex:* `$add 20 Créer 10 nouveaux items`\n"
-usage_tasks: "**tasks**\n`$tasks OU $tasks <user_id>` \n*Ex:* `$tasks 496061891353903122`\n"
-usage_close: "**close**\n`$close <ID de la tâche> <Temps passé en minutes>` \n*Ex:* `$close ABCD 30`\n"
-usage_unassigned: "**unassigned**\n`$unassigned`\n"
-usage_info: "**info**\n`$info <ID tâche>` \n*Ex:* `$info ABCD`\n"
+usage_add: "**add**\nCommande : `$add <description>` \n*Ex:* `$add Créer 10 nouveaux items`\n"
+usage_tasks: "**tasks**\nCommande : `$tasks OU $tasks <user_id>` \n*Ex:* `$tasks 496061891353903122`\n"
+usage_close: "**close**\nCommande : `$close <ID de la tâche> <Temps passé en minutes>` \n*Ex:* `$close ABCD 30`\n"
+usage_todo: "**todo**\nCommande : `$todo`\n"
+usage_info: "**info**\nCommande : `$info <ID tâche>` \n*Ex:* `$info ABCD`\n"
+usage_unassign: "**unassign**\nCommande : `$unassign <ID tâche>` \n*Ex:* `$unassign ABCD`\n"
+usage_assign: "**assign**\nCommande :  *(Ne fonctionne que si le tag 'Multi' est activé)*\n`$assign <ID tâche>` \n*Ex:* `$assign ABCD`\n"
 
 # SUCCESS
 success_add: "La tâche `[{}] {}` a été correctement créée !\nTu as 5min pour cliquer sur les émoticones en dessous et ajouter un tag à ta tâche.\n*(Attend que les icones soient toutes apparues avant de cliquer)*\n\n"
