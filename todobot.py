@@ -73,7 +73,6 @@ async def add(ctx, *args):
 	:param description: content of the task
 	"""
 	try:
-		minutes = int(args[0])
 		description = " ".join(args[1:])
 	except:
 		embed = discord.Embed(title="ERROR", description=msg['usage_add'], color=config['color'])
